@@ -4,8 +4,8 @@ let firstNumber = Math.floor(givenNumber % 1000 / 100);
 let secondNumber = Math.floor(givenNumber % 100 / 10);
 let thirdNumber = Math.floor(givenNumber % 10);
 
-let summ = Math.floor(firstNumber + secondNumber + thirdNumber);
-let multiplication = Math.floor(firstNumber * secondNumber * thirdNumber);
+let summ = firstNumber + secondNumber + thirdNumber;
+let multiplication = firstNumber * secondNumber * thirdNumber;
 
 //a
 if(summ === 0){

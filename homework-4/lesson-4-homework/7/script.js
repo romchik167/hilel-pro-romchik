@@ -24,7 +24,7 @@ let d1 = (myValue % 10);
 myValue = (myValue - d1)
 myValue = (myValue / 10)
 
-if( d1 === d6, d2 === d5, d3 === d4){
+if( d1 === d6 && d2 === d5 && d3 === d4){
     alert('Ваше число дзеркальне')
 }
 else{
