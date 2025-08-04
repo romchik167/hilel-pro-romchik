@@ -55,15 +55,12 @@ let users = [
     }
 ]
 //A
+let allBalance = 0;
 for (let i = 0; i < users.length; i++){
     if(users[i].balance >= 2000){
         document.write(`<br>${users[i].phone} номер телефону користувача у якого баланс більше ніж 2000<br>`)
     }
+     allBalance += users[i].balance;    
 }
 document.write(`<br><br>`)
-//B
-let allBalance = 0;
-for (let i = 0; i < users.length; i++){
-     allBalance += users[i].balance;
-}
 document.write(`Баланс всіх користувачів: ${allBalance.toFixed(2)}`)
