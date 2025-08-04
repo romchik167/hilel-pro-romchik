@@ -49,7 +49,9 @@ for (let i = 0; i < arr.length; i++){
     if(arr[i] > 0){
         prodactPossitive *= arr[i]
     }
-    if(i !== biggestElIndex){
+}
+for (let i = 0; i < arr.length; i++) {
+    if (i !== biggestElIndex) {
         arr[i] = 0;
     }
 }
