@@ -1,6 +1,8 @@
-for(let i = 0; i <= 10;i++){
+function value(){
+    for(let i = 0; i <= 10;i++){
     let promptValue = +prompt('Введіть число більше ніж 100')
     if(promptValue > 100){
+        console.log(promptValue)
         break;
     }
     if(promptValue < 100){
@@ -10,3 +12,5 @@ for(let i = 0; i <= 10;i++){
         alert('Введіть корректне число')
     }
 }
+}
+value();
