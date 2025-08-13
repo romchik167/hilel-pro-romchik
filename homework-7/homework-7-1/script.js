@@ -1,9 +1,13 @@
-let value = 0;
-function sum(num){
- value += num;
+function createSum(){
+    let value = 0;
+    return function(num){
+        value += num;
+        return value;
+    }   
 }
-sum(2);
-console.log(value);
+const sum = createSum();
 
-sum(5);
-console.log(value);
+console.log(sum(4));  // 4
+console.log(sum(6));  // 10
+console.log(sum(10)); // 20
+console.log(sum(7));  // 27
