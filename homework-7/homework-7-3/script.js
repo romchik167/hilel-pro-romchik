@@ -13,7 +13,7 @@ function value(){
             break;
         }
         if(i === 10 && promptValue < 100){
-            console.log(value)
+            console.log(promptValue)
         }
     }
 }
