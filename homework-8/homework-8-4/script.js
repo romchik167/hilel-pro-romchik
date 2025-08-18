@@ -1,16 +1,26 @@
 const items = [
-  { name: "apple", quantity: 2, price: 30 },
-  { name: "banana", quantity: 5, price: 10 },
-  { name: "orange", quantity: 3, price: 20 },
+    {
+        name: "apple",
+        quantity: 2,
+        price: 30
+    }, {
+        name: "banana",
+        quantity: 5,
+        price: 10
+    }, {
+        name: "orange",
+        quantity: 3,
+        price: 20
+    }
 ];
 
-const itemsAllArr = items.map(items =>{
-    return{
+const itemsAllArr = items.map(items => {
+    return {
         name: items.name,
         quantity: items.quantity,
         price: items.price,
-        total: items.quantity * items.price,
-    }    
+        total: items.quantity * items.price
+    }
 });
 console.log(itemsAllArr);
 

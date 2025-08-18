@@ -1,7 +1,17 @@
 const books = [
-  { title: "JS для начинающих", price: 500, genre: "programming" },
-  { title: "CSS в деталях", price: 300, genre: "design" },
-  { title: "React быстро", price: 800, genre: "programming" },
+    {
+        title: "JS для начинающих",
+        price: 500,
+        genre: "programming"
+    }, {
+        title: "CSS в деталях",
+        price: 300,
+        genre: "design"
+    }, {
+        title: "React быстро",
+        price: 800,
+        genre: "programming"
+    }
 ];
 
 const booksProgramming = books.filter((book) => book.genre === "programming");;
@@ -11,7 +21,6 @@ let totalPrice = booksProgramming.reduce((sum, book) => sum + book.price, 0);
 console.log(booksProgramming);
 console.log(booksProgrammingArr);
 console.log(totalPrice);
-
 
 
 
