@@ -15,4 +15,4 @@ const users = [
         userPhoneNumber: '+1 (978) 227-5337',
         userAdress: 'Baldwin, New York(NY), 11510'
     }
-]
+];

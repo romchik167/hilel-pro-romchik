@@ -1,1 +1,1 @@
-showUserInfo();
+users.showInfo();
