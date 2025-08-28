@@ -1,8 +1,8 @@
 const text = document.querySelector('.text');
 text.addEventListener("click", () => {
-    if(text.style.color !== "red"){
+    if (text.style.color !== "red") {
         text.style.color = "red";
-    }else{
+    } else {
         text.style.color = "black";
     }
 })
