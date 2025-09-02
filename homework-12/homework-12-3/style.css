@@ -1,0 +1,34 @@
+.container {
+    margin: 0 auto;
+    min-width: 600px;
+    max-width: 800px;
+}
+.wrapper {
+    background-color: #ececec;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+li {
+    list-style: none;
+}
+li:hover {
+    cursor: pointer;
+}
+.delete{
+    text-decoration: line-through black;
+}
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.new-task {
+    display: flex;
+    gap: 10px;
+}
