@@ -9,5 +9,9 @@ document
 document
     .querySelector('.go-to-this-adress')
     .addEventListener('click', function () {
-        location.href = adressYouWant;
+        if (adressYouWant == '') {
+            alert('Спочатку введіть адресу')
+        } else {
+            location.href = adressYouWant;
+        }
     });

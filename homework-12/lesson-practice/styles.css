@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   gap: 20px;
+  margin-bottom: 30px;
 }
 
 .wrapper > div {
@@ -8,6 +9,9 @@
   min-height: 100px;
   padding: 20px;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;  
+  align-items: flex-start;
 }
 
 ul {
@@ -22,4 +26,13 @@ li {
 li:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+.order-details{
+  color: #fff;
+  background-color: green;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

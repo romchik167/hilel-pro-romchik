@@ -97,10 +97,26 @@ const showProductInfo = product => {
     description.textContent = product.description;
     const price = document.createElement('span');
     price.textContent = `Ціна: $${product.price}`;
+    const buyBtn = document.createElement('button');
+
+    const orderDetails = document.querySelector('.order-details');
+
+
+
+    buyBtn
+        .classList
+        .add('button');
+    buyBtn.textContent = 'Buy';
+
+    buyBtn.addEventListener('click', function () {    
+        orderDetails.textContent = `Вітаю, ви купили ${product.name}`
+        document.appendChild(orderDetails)
+    });
 
     infoParent.appendChild(name)
     infoParent.appendChild(description)
     infoParent.appendChild(price)
+    infoParent.appendChild(buyBtn)
 }
 
 showCategories();
