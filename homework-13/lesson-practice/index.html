@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form name="registerForm">
+        <input type="text" name="userName" placeholder="Enter your name here">
+        <div class="birhday-wrap">
+            <span>Enter your birhday </span>
+        <input type="date" name="birthday" >
+    </div>
+    <div class="gender-wrap">
+        <h3>Enter your gender</h3>
+        <span>Male<input type="radio" name="gender" value="male"></span>
+        <span>Female<input type="radio" name="gender" value="female"></span>
+    </div>
+        <select name="city">
+            <option selected disabled>Choose your city</option>
+            <option value="kyiv">Kyiv</option>
+            <option value="rivne">Rivne</option>
+            <option value="london">London</option>
+            <option value="tokyo">Tokyo</option>
+        </select>
+        <textarea name="adress" placeholder="Enter your adress here"></textarea>
+        <div class="langueges-wrap">
+            <span>Enter languages what you use</span>
+            <span>JavaScript<input type="checkbox" name="languages" value="js"></span>
+            <span>Java<input type="checkbox" name="languages" value="java"></span>
+            <span>Python<input type="checkbox" name="languages" value="python"></span>
+        </div>
+        <button type="button">Зберегти</button>
+    </form>
+    <script src="./app.js"></script>
+</body>
+</html>
