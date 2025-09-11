@@ -11,6 +11,8 @@ const sliderList = document.querySelector('.slider-list');
 
 let currentIndex = 0;
 
+const sliderButtons = []
+
 const showSlide = function (index) {
     let slides = document.querySelectorAll('.slide');
     if (index < 0) {
@@ -25,6 +27,14 @@ const showSlide = function (index) {
             .classList
             .remove('active')
     }
+    sliderButtons.forEach((btn, index) => {
+        if (index === currentIndex) {
+            btn.classList.add('active-slider-lest-el')
+        } else {
+            btn.classList.remove('active-slider-lest-el')
+        }
+       
+    })
     slides[currentIndex]
         .classList
         .add('active');
@@ -44,6 +54,7 @@ document
     });;
 
 
+
 for(let i = 0; i < images.length; i++){
     const sliderListElWrap = document.createElement('li');
     const sliderListEl = document.createElement('button');
@@ -51,9 +62,13 @@ for(let i = 0; i < images.length; i++){
     sliderListEl.classList.add('slider-list-el')    
     sliderListElWrap.appendChild(sliderListEl);
     sliderList.appendChild(sliderListEl);
+
+    sliderButtons.push(sliderListEl)
+
     sliderListEl.addEventListener('click', () => {
         showSlide(i);
     })
+
 }
 
 
