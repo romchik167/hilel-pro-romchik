@@ -54,8 +54,8 @@ document
     });;
 
 
-
-for(let i = 0; i < images.length; i++){
+const showsliderListElements = () => {
+   for(let i = 0; i < images.length; i++){
     const sliderListElWrap = document.createElement('li');
     const sliderListEl = document.createElement('button');
     sliderListEl.title = i + 1
@@ -68,7 +68,9 @@ for(let i = 0; i < images.length; i++){
     sliderListEl.addEventListener('click', () => {
         showSlide(i);
     })
-
+} 
 }
+showsliderListElements();
+
 
 
