@@ -23,7 +23,6 @@ console.log(booksProgrammingArr);
 console.log(totalPrice);
 
 
-
 // Задание:
 
 // 1. С помощью filter выбрать только книги жанра "programming".
