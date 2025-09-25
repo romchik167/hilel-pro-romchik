@@ -48,3 +48,4 @@ apartments.forEach(app => bigHouse.addApart(app))
 
 
 console.log(bigHouse)
+
