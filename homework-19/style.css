@@ -1,0 +1,26 @@
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.columns-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.column {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.column-planets {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.show-more-btn {
+    display: none;
+}
+.hide-btn{
+    display: none;
+}
