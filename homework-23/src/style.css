@@ -1,0 +1,157 @@
+:root{
+    --bg: #f4f7ff;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #3b82f6;
+    --accent-2: #7dd3fc;
+    --danger: #ef4444;
+    --radius: 12px;
+    --shadow: 0 12px 30px rgba(15,23,42,0.06);
+    --text: #071029;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: 16px;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.container {
+    max-width: 1280px;
+    margin: 48px auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+.wrapper {
+    flex: 1;
+    background: var(--card);
+    border-radius: calc(var(--radius) + 6px);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(12,18,40,0.04);
+}
+
+/* Side boxes */
+.wrap-immediate,
+.wrap-complited {
+    max-width: 400px;
+    background: linear-gradient(180deg,#fff,#fbfdff);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(12,18,40,0.03);
+}
+
+/* Form */
+.add-task-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.add-task-form h1 { margin: 0; font-size: 1.25rem; }
+.input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(12,18,40,0.06);
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(12,18,40,0.03);
+    font-size: 0.98rem;
+}
+.button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 0;
+    background: linear-gradient(90deg,var(--accent),#60a5fa);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(59,130,246,0.12);
+}
+.button:hover { transform: translateY(-2px); }
+
+/* Lists */
+ul { list-style: none; padding: 0; margin: 0; }
+.todo-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.todo-list-immediate, .complited-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+
+/* Item */
+.todo-item,
+.new-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg,#fff,#f8fbff);
+    border: 1px solid rgba(12,18,40,0.03);
+    box-shadow: 0 6px 18px rgba(12,18,40,0.04);
+    min-width: 0;
+}
+.todo-left { display: flex; flex-direction: column; min-width: 0; }
+.todo-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.todo-meta { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+
+/* Actions/buttons */
+.actions { display: flex; gap: 8px; align-items: center; }
+.icon-btn {
+    background: transparent;
+    border: 1px solid rgba(12,18,40,0.04);
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--muted);
+    font-weight: 600;
+}
+.icon-btn:hover {
+    background: rgba(11,17,32,0.04);
+    color: var(--text);
+    transform: translateY(-2px);
+}
+.btn-danger {
+    background: linear-gradient(90deg,#fb7185,#ef4444);
+    color: #fff;
+    border: 0;
+}
+.deleted{
+    text-decoration: line-through;
+}
+.hidden{
+    display: none;
+}
+/* Specific JS classes */
+.add-to-immediate { background: linear-gradient(90deg,var(--accent-2),#9be7ff); color: #03315a; border: 0; }
+.add-to-complited { background: linear-gradient(90deg,#9ee7b8,#10b981); color: #05321a; border: 0; }
+
+/* States */
+.completed { opacity: 0.85; }
+.completed .todo-title { text-decoration: line-through; color: rgba(6,16,40,0.45); }
+
+
+/* Accessibility focus */
+:focus { outline: none; }
+:focus-visible { box-shadow: 0 6px 20px rgba(59,130,246,0.14); border-radius: 8px; }
+
+/* Responsive (desktop-first) */
+@media (max-width: 900px) {
+    .container { flex-direction: column; padding: 0 16px; }
+    .wrap-immediate, .wrap-complited { width: 100%; }
+}

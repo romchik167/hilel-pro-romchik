@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrapper">
+                <form class="add-task-form">
+                    <h1>To-Do list</h1>
+                    <input type="text" placeholder="Enter your task here" class="input">
+                    <button type="button" class="button">Add task</button>
+                </form>
+                <ul class="todo-list"></ul>
+            </div>
+            <div class="wrap-immediate">
+                <h1 class="immediate-title">Immediate tasks</h1>
+                <ul class="todo-list-immediate"></ul>
+            </div>
+            <div class="wrap-complited">
+                <h1 class="complited-title">Coplited tasks</h1>
+                <ul class="complited-list"></ul>
+            </div>
+        </div>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
