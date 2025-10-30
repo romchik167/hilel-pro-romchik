@@ -6,6 +6,7 @@ import AppleLogo from './components/AppleLogo'
 function App() {
   const [countApple, setCountApple] = useState(0)
   const [countAndroid, setCountAndroid] = useState(0)
+  const [showResults, setShowResults] = useState(false)
 
   return (
     <>
@@ -24,22 +25,34 @@ function App() {
         </button>
       </div>
     </div>
+    <button onClick={() => setShowResults((s) => !s)}>
+      Show results
+    </button>
+
+    {showResults && (
+      <div className="results-wrap">
         {countAndroid < countApple && (
-          <>
           <div className='logo-wrap'>
-          <AppleLogo /> <span>Apple is the best</span>
+            <AppleLogo />
+            <span>Apple is the best</span>
           </div>
-            
-          </>
         )}
+
         {countAndroid > countApple && (
-          <>
           <div className='logo-wrap'>
-            <AndroidLogo /> <span>Android is the best</span>
-          </div>  
-          </>
+            <AndroidLogo />
+            <span>Android is the best</span>
+          </div>
         )}
-      
+
+        {countAndroid === countApple && (
+          <div className='logo-wrap'>
+            <span>Результати рівні!</span>
+          </div>
+        )}
+      </div>
+    )}
+
     </>
   )
 }
