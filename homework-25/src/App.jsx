@@ -4,8 +4,14 @@ import AndroidLogo from './components/AndroidLogo'
 import AppleLogo from './components/AppleLogo'
 
 function App() {
-  const [countApple, setCountApple] = useState(0)
-  const [countAndroid, setCountAndroid] = useState(0)
+  const [countApple, setCountApple] = useState(() => {
+    const value = +(localStorage.getItem('Apple count') || 0);
+    return value;
+  })
+  const [countAndroid, setCountAndroid] = useState(() => {
+    const value = +(localStorage.getItem('Apple count') || 0);
+    return value;
+  })
   const [showResults, setShowResults] = useState(false)
 
   return (
@@ -14,13 +20,21 @@ function App() {
     <div className='who-is-the-best-wrap'>
       <div className='logo-wrap'>
         <AppleLogo />
-          <button onClick={() => setCountApple((count) => count + 1)}>
+          <button onClick={() => setCountApple((count) => {
+            const finalCount = count + 1;
+            localStorage.setItem('Apple count', finalCount)
+            return finalCount;
+            })}>
             Apple is the best {countApple}
           </button>
       </div>
       <div className='logo-wrap'>
         <AndroidLogo />
-        <button onClick={() => setCountAndroid((count) => count + 1)}>
+        <button onClick={() => setCountAndroid((count) => {
+          const finalCount = count + 1;
+          localStorage.setItem('Android count', finalCount)
+          return finalCount;
+          })}>
           Android is the best {countAndroid}
         </button>
       </div>
