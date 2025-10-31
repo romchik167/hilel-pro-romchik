@@ -18,10 +18,14 @@ app.post('/tasks', (req, res) => {
   const newTask = {
     id: Date.now(),
     text: req.body.text,
-    completed: false
   };
   tasks.push(newTask);
-  console.log('Задача добавлена:', newTask);
+  console.log('complite add:', newTask);
   res.json(newTask);
+});
+app.delete('/tasks/:id', (req, res) => {
+  const id = Number(req.params.id);
+  tasks = tasks.filter(t => t.id !== id);
+  res.json({ message: 'Deleted!' });
 });
 app.listen(3000, () => console.log('good'));

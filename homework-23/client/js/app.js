@@ -53,6 +53,7 @@ document
                 newTask
                     .classList
                     .add('deleted');
+                    deleteTask(task.id)
             });
             newTask.appendChild(deleteBtn);
 
@@ -103,13 +104,13 @@ document
         }
     });
 
+loadTasks();
+
 async function loadTasks() {
     const res = await fetch('http://localhost:3000/tasks');
     const tasks = await res.json();
     tasks.forEach(renderTask);
 }
-
-loadTasks();
 
 async function addTask(text) {
     const res = await fetch('http://localhost:3000/tasks', {
@@ -123,3 +124,11 @@ async function addTask(text) {
     const newTask = await res.json();
     renderTask(newTask)
 };
+
+async function deleteTask(id, element) {
+  await fetch(`http://localhost:3000/tasks/${id}`, {
+    method: 'DELETE'
+  });
+
+  element.remove();
+}
