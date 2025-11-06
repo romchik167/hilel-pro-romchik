@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './App.css'
+import AddContactPage from './components/AddContactPage';
+import ContactsList from './components/ContactsList';
+import Menu from './components/Menu';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -8,6 +11,7 @@ function App() {
   });
   const [newContactName, setNewContactName] = useState("");
   const [newContactPhone, setNewContactPhone] = useState("");
+
   const [isContactsVisible, setIsContactsVisible] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -44,39 +48,23 @@ function App() {
   return (
     <>
     <div className='wrap'>
+      <Menu toggleContacts={toggleContacts} toggleForm={toggleForm} />
+
       <div className='contacts-wrap'>
-        <button type='button' className='contacts-btn' onClick={toggleContacts}>Contacts</button>
         {isContactsVisible && contacts.length > 0 && (
-          <ul className='contacts-list'>
-            {contacts.map((contact, index) => (
-              <li key={contact.id}>
-                {contact.name} : {contact.phone}
-                <button onClick={() => deleteContact(index)} className="delete-btn">Delete</button>
-              </li>
-            ))}
-          </ul>
+          <ContactsList contacts={contacts} onDelete={deleteContact} />
         )}
       </div>
+
       <div className='add-contact'>
-        <button className='add-contact-btn' onClick={toggleForm}>Add contact</button>
         {isFormVisible && (
-          <form className='add-contacts-form'> 
-            <input 
-              type='text' 
-              className='add-contacts-input' 
-              placeholder='Enter name' 
-              value={newContactName} 
-              onChange={(e) => setNewContactName(e.target.value)}
-            />
-            <input 
-              type='text' 
-              className='add-contacts-input' 
-              placeholder='Enter phone number' 
-              value={newContactPhone} 
-              onChange={(e) => setNewContactPhone(e.target.value)}
-            />
-            <button type='button' className='add-contact-form-btn' onClick={addContact}>Add</button>
-          </form>
+          <AddContactPage
+            newContactName={newContactName}
+            newContactPhone={newContactPhone}
+            setNewContactName={setNewContactName}
+            setNewContactPhone={setNewContactPhone}
+            addContact={addContact}
+          />
         )}
       </div>
     </div>
