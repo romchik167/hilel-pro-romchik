@@ -1,4 +1,4 @@
-function ContactsList({ contacts, deleteContact }) {
+function ContactsList({ contacts, onDelete }) {
   if (contacts.length === 0) {
     return <p>No contacts yet.</p>;
   }
@@ -21,7 +21,7 @@ function ContactsList({ contacts, deleteContact }) {
             <td>{contact.phone}</td>
             <td>
               <button
-                onClick={() => deleteContact(index)}
+                onClick={() => onDelete(index)}
                 className="delete-btn"
               >
                 Delete
