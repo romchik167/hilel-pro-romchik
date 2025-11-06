@@ -5,6 +5,8 @@ import ContactsList from './pages/ContactsList';
 import Menu from './pages/Menu';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import Page404 from './pages/Page404';
+import ThemeSwitcher from './theme';
+import HomePage from './pages/HomePage';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
@@ -42,6 +44,7 @@ function App() {
       <div className='wrap'>
         <Menu />
         <Routes>
+        <Route path='/' element={<HomePage />} />
           <Route path='/contacts' element={<ContactsList contacts={contacts} onDelete={deleteContact} />}/>
           <Route path='/addContact' element={<AddContactPage
             newContactName={newContactName}
@@ -53,6 +56,7 @@ function App() {
           <Route path='*' element={<Page404 />} />
         </Routes>
         </div>
+        <ThemeSwitcher />
       </BrowserRouter>
     </>
   )
