@@ -2,6 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import AndroidLogo from './components/AndroidLogo'
 import AppleLogo from './components/AppleLogo'
+import BtnApple from './components/BtnApple'
+import BtnAndroid from './components/BtnAndroid'
+import Results from './components/Results'
 
 function App() {
   const [countApple, setCountApple] = useState(() => {
@@ -9,10 +12,25 @@ function App() {
     return value;
   })
   const [countAndroid, setCountAndroid] = useState(() => {
-    const value = +(localStorage.getItem('Apple count') || 0);
+    const value = +(localStorage.getItem('Android count') || 0);
     return value;
   })
-  const [showResults, setShowResults] = useState(false)
+
+  function handleIncrementApple() {
+    setCountApple((prev) => {
+      const next = prev + 1
+      localStorage.setItem('Apple count', String(next))
+      return next
+    })
+  }
+
+  function handleIncrementAndroid() {
+    setCountAndroid((prev) => {
+      const next = prev + 1
+      localStorage.setItem('Android count', String(next))
+      return next
+    })
+  }
 
   return (
     <>
@@ -20,52 +38,14 @@ function App() {
     <div className='who-is-the-best-wrap'>
       <div className='logo-wrap'>
         <AppleLogo />
-          <button onClick={() => setCountApple((count) => {
-            const finalCount = count + 1;
-            localStorage.setItem('Apple count', finalCount)
-            return finalCount;
-            })}>
-            Apple is the best {countApple}
-          </button>
+        <BtnApple count={countApple} onIncrement={handleIncrementApple} />
       </div>
       <div className='logo-wrap'>
         <AndroidLogo />
-        <button onClick={() => setCountAndroid((count) => {
-          const finalCount = count + 1;
-          localStorage.setItem('Android count', finalCount)
-          return finalCount;
-          })}>
-          Android is the best {countAndroid}
-        </button>
+        <BtnAndroid count={countAndroid} onIncrement={handleIncrementAndroid} />
       </div>
     </div>
-    <button onClick={() => setShowResults((s) => !s)}>
-      Show results
-    </button>
-
-    {showResults && (
-      <div className="results-wrap">
-        {countAndroid < countApple && (
-          <div className='logo-wrap'>
-            <AppleLogo />
-            <span>Apple is the best</span>
-          </div>
-        )}
-
-        {countAndroid > countApple && (
-          <div className='logo-wrap'>
-            <AndroidLogo />
-            <span>Android is the best</span>
-          </div>
-        )}
-
-        {countAndroid === countApple && (
-          <div className='logo-wrap'>
-            <span>Результати рівні!</span>
-          </div>
-        )}
-      </div>
-    )}
+    <Results countApple={countApple} countAndroid={countAndroid} />
 
     </>
   )
