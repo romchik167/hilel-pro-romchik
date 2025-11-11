@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://romchik167.github.io/hilel-pro-romchik2/homework-27/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
