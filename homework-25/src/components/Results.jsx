@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import AppleLogo from './AppleLogo'
-import AndroidLogo from './AndroidLogo'
 
-export default function Results({ countApple, countAndroid }) {
+export default function Results({ candidates }) {
   const [show, setShow] = useState(false)
+  
+  const maxCount = Math.max(...candidates.map(c => c.count), 0)
+  const winners = candidates.filter(c => c.count === maxCount && c.count > 0)
+  const allZero = candidates.every(c => c.count === 0)
 
   return (
     <div className="results-container">
@@ -13,23 +15,25 @@ export default function Results({ countApple, countAndroid }) {
 
       {show && (
         <div className="results-wrap">
-          {countAndroid < countApple && (
+          {allZero && (
             <div className="logo-wrap">
-              <AppleLogo />
-              <span>Apple is the best</span>
+              <span>Поки немає результатів!</span>
             </div>
           )}
 
-          {countAndroid > countApple && (
-            <div className="logo-wrap">
-              <AndroidLogo />
-              <span>Android is the best</span>
-            </div>
-          )}
+          {winners.length === 1 && (() => {
+            const Winner = winners[0].Logo
+            return (
+              <div className="logo-wrap">
+                <Winner />
+                <span>{winners[0].name} is the best ({winners[0].count})</span>
+              </div>
+            )
+          })()}
 
-          {countAndroid === countApple && (
+          {winners.length > 1 && (
             <div className="logo-wrap">
-              <span>Результати рівні</span>
+              <span>Нічия: {winners.map(w => w.name).join(', ')} ({maxCount})</span>
             </div>
           )}
         </div>
@@ -37,3 +41,4 @@ export default function Results({ countApple, countAndroid }) {
     </div>
   )
 }
+
