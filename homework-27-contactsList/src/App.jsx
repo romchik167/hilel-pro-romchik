@@ -44,7 +44,7 @@ function App() {
       <div className='wrap'>
         <Menu />
         <Routes>
-        <Route path='/' element={<HomePage />} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/contacts' element={<ContactsList contacts={contacts} onDelete={deleteContact} />}/>
           <Route path='/addContact' element={<AddContactPage
             newContactName={newContactName}
