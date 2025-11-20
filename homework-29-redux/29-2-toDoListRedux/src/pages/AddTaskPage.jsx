@@ -1,13 +1,17 @@
-import React from "react";
 import ToDoForm from '../components/ToDoForm'
-import TasksContext from '../TasksContext'
+import { addTask } from "../store/store";
+import { useDispatch } from "react-redux";
 
 export default function AddTask() {
-  const { addTask } = React.useContext(TasksContext);
+  const dispatch = useDispatch();
+  
+  const handleAddTask = (taskText) => {
+    dispatch(addTask(taskText));
+  };
   return (
     <>
       <div>AddTask</div>
-      <ToDoForm onAddTask={addTask} />
+      <ToDoForm onAddTask={handleAddTask} />
     </>
     
   )

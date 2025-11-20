@@ -1,9 +1,11 @@
 import React from "react";
-import TasksContext from '../TasksContext'
+import { useDispatch, useSelector } from "react-redux";
+import { deleteTask, toggleTask } from "../store/store";
 
 export default function ListPage() {
-  const { tasks, toggleTask, deleteTask } = React.useContext(TasksContext);
+  const tasks = useSelector(state => state.tasks);
 
+  const dispatch = useDispatch();
   return (
     <div>
       <h2>Список завдань</h2>
@@ -29,7 +31,7 @@ export default function ListPage() {
                 <input 
                   type="checkbox" 
                   checked={task.completed}
-                  onChange={() => toggleTask(task.id)}
+                  onChange={() => dispatch(toggleTask(task.id))}
                   style={{ cursor: 'pointer' }}
                 />
                 <span style={{ 
@@ -40,7 +42,7 @@ export default function ListPage() {
                 </span>
               </div>
               <button 
-                onClick={() => deleteTask(task.id)}
+                onClick={() => dispatch(deleteTask(task.id))}
                 style={{ 
                   padding: '5px 10px', 
                   backgroundColor: '#dc3545', 
