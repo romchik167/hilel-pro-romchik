@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import styles from './ToDoForm.module.css';
 
 export default function ToDoForm({ onAddTask }) {
   
@@ -15,26 +16,18 @@ export default function ToDoForm({ onAddTask }) {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px' }}>
+    <form onSubmit={formik.handleSubmit} className={styles.form}>
       <input 
         type="text" 
         name="task" 
         placeholder="Введіть ваше завдання" 
         value={formik.values.task}
         onChange={formik.handleChange}
-        style={{ padding: '10px', fontSize: '16px', border: '1px solid #ccc', borderRadius: '4px' }}
+        className={styles.input}
       />
       <button 
         type="submit"
-        style={{ 
-          padding: '10px', 
-          backgroundColor: '#28a745', 
-          color: 'white', 
-          border: 'none', 
-          borderRadius: '4px',
-          cursor: 'pointer',
-          fontSize: '16px'
-        }}
+        className={styles.submitButton}
       >
         Додати завдання
       </button>

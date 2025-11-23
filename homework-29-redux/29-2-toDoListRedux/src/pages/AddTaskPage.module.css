@@ -1,0 +1,15 @@
+.addTaskContainer {
+  width: 100%;
+}
+
+.addTaskTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

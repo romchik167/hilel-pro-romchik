@@ -1,0 +1,75 @@
+.listContainer {
+  width: 100%;
+}
+
+.listTitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.emptyMessage {
+  font-size: 16px;
+  color: #999;
+  padding: 20px;
+  text-align: center;
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.taskItem {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.taskItem.completed {
+  background-color: #e8f5e9;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.taskCheckbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.taskText {
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.taskText.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.deleteButton:hover {
+  background-color: #c82333;
+}

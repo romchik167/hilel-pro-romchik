@@ -1,0 +1,48 @@
+/* Контейнер форми */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+/* Поле введення */
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Arial, sans-serif';
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Поле введення при фокусі */
+.input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+/* Кнопка відправки */
+.submitButton {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Arial, sans-serif';
+  transition: background-color 0.3s ease;
+}
+
+/* Кнопка відправки при наведенні */
+.submitButton:hover {
+  background-color: #218838;
+}
+
+/* Кнопка відправки при натиску */
+.submitButton:active {
+  background-color: #1e7e34;
+}

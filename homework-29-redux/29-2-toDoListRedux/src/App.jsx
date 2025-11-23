@@ -12,13 +12,8 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div style={{ 
-          maxWidth: '800px', 
-          margin: '0 auto', 
-          padding: '20px',
-          fontFamily: 'Arial, sans-serif'
-        }}>
-          <h1 style={{ textAlign: 'center', color: '#333' }}>To Do List</h1>
+        <div className={"container"}>
+          <h1 className={"title"}>To Do List</h1>
           <Menu />
           <Routes>
             <Route path='/' element={<HomePage />} />
