@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import './ProjectsPage.css';
 import { useDispatch, useSelector } from 'react-redux';

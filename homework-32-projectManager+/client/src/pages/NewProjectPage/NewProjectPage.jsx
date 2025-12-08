@@ -3,7 +3,7 @@ import './NewProjectPage.css';
 import { PRIORITIES } from '../../common/priorities';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveProjectAsync, getProjectsAsync } from '../../store/features/projects';
-import { useNavigate, useSearchParams } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { urls } from '../../common/menu';
 
 export default function NewProjectPage() {

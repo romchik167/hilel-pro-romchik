@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router';
+import { Navigate } from 'react-router-dom';
 
 export default function ProtectedRoute({ Component }) {
   const { isAuthenticated } = useSelector(state => state.auth);

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './NewTaskPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveTaskAsync, getTasksAsync } from '../../store/features/tasks';
-import { useNavigate, useSearchParams, useParams } from 'react-router';
+import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
 
 const TASK_STATUSES = {
   todo: 'To Do',

@@ -1,6 +1,6 @@
 import { menuItems } from '../../common/menu';
 import './Menu.css';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 
