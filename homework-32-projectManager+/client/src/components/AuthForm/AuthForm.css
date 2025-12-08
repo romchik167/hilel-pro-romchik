@@ -1,0 +1,75 @@
+.AuthForm {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.AuthForm form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.AuthForm input {
+  padding: 0.6rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.AuthForm input::placeholder {
+  color: #999;
+}
+
+.AuthForm input:focus {
+  outline: none;
+  border-color: white;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.AuthForm button {
+  padding: 0.6rem 1.25rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.AuthForm button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.AuthForm > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+}
+
+.AuthForm span {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.AuthForm > div button {
+  background: var(--danger-color);
+  padding: 0.5rem 1rem;
+}
+
+.AuthForm > div button:hover {
+  background: #c0392b;
+}
