@@ -1,0 +1,109 @@
+.NewProjectPage {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  flex: 1;
+}
+
+.ProjectForm {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.ProjectForm h1 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.FormGroup {
+  margin-bottom: 2rem;
+}
+
+.FormGroup label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.FormInput,
+.FormSelect,
+.FormTextarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  background: white;
+  color: var(--secondary-color);
+}
+
+.FormInput:focus,
+.FormSelect:focus,
+.FormTextarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.FormTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.FormButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.SaveButton,
+.CancelButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  text-transform: uppercase;
+  border: none;
+}
+
+.SaveButton {
+  background: var(--success-color);
+  color: white;
+  flex: 1;
+  max-width: 200px;
+}
+
+.SaveButton:hover:not(:disabled) {
+  background: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
+}
+
+.SaveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.CancelButton {
+  background: var(--danger-color);
+  color: white;
+  flex: 1;
+  max-width: 200px;
+}
+
+.CancelButton:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}

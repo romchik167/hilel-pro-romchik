@@ -1,0 +1,27 @@
+.PriorityLabel {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.PriorityLabel_HIGH {
+  background: rgba(231, 76, 60, 0.15);
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+.PriorityLabel_MEDIUM {
+  background: rgba(243, 156, 18, 0.15);
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+
+.PriorityLabel_LOW {
+  background: rgba(52, 152, 219, 0.15);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
